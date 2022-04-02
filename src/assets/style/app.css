@@ -1,0 +1,326 @@
+/* variables */
+:root{
+    --Moderateblue: hsl(238, 40%, 52%);
+    --SoftRed: hsl(358, 79%, 66%);
+    --Lightgrayishblue: hsl(239, 57%, 85%);
+    --Palered: hsl(357, 100%, 86%);
+    --Darkblue: hsl(212, 24%, 26%);
+    --GrayishBlue: hsl(211, 10%, 45%);
+    --Lightgray: hsl(223, 19%, 93%);
+    --Verylightgray: hsl(228, 33%, 97%);
+    --White: hsl(0, 0%, 100%);
+}
+
+/* fonts */
+
+
+/* reset */
+
+*, ::after, ::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* styles */
+
+body{
+    background: var(--Lightgray);
+    font-family: Rubik;
+    font: 16px;
+}
+
+.App{
+    margin: 4rem 0;
+}
+
+.comment-container{
+    max-width: 730px;
+    margin: 0 auto;
+}
+
+.comment-score{
+    margin: auto 10px auto 0;
+    background: var(--Lightgray);
+    color: var(--GrayishBlue);
+    padding: 10px;
+    border-radius: 7px;
+}
+
+.comment-score button{
+    background: none;
+    border: none;
+}
+
+.comment-score button svg:hover path{
+    fill: var(--Moderateblue);
+}
+.comment-score .score-counter{
+    margin: 10px 0;
+}
+
+
+.reply-container{
+    box-sizing: border-box;
+    margin-left: 3%;
+    border-left: 1px solid var(--Lightgrayishblue);
+    padding-left: 3%;
+}
+
+.comment{
+    display: flex;
+    margin-bottom: 30px;
+    background: var(--White);
+    padding: 25px;
+    border-radius: 10px;
+    height: fit-content;
+}
+
+.comment-body{
+    width: 100%;
+}
+.comment-header{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-img{
+    width: 50px;
+}
+
+.comment-header .username{
+    font-weight: 700;
+    color: var(--Darkblue);
+}
+
+.comment-header .create-time, .comment-body{
+    color: var(--GrayishBlue);
+}
+.comment-btn{
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+}
+
+.you-tag{
+    background: var(--Moderateblue);
+    color: var(--White);
+    border-radius: 3px;
+    padding: 1px 5px 3px;
+}
+
+button{
+    background: none;
+    border: none;
+    font-weight: 700;
+    align-items: center;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.comment-btn button{
+    color: var(--Moderateblue);
+    padding: 10px;
+    display: flex;
+    gap: 5px;
+}
+
+.comment-header .comment-btn button.delete-btn{
+    color: var(--SoftRed);
+}
+
+.comment-header .comment-btn button svg{
+    width: 14;
+}
+
+.comment-content{
+    display: flex;
+    flex-flow: column wrap;
+    margin: 10px;
+}
+.comment-content .update-btn{
+    align-self: flex-end;
+}
+.comment-content .replyingTo{
+    font-weight: 700;
+    color: var(--Moderateblue);
+}
+.comment-content button{
+    margin-top: 15px;
+    margin-right: 10px;
+}
+.add-comment{
+    max-width: 730px;
+    margin: 0 auto;
+    display: flex;
+    margin-bottom: 30px;
+    background: var(--White);
+    padding: 25px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.add-comment textarea, .comment-content textarea{
+    height: 80px;
+    width: 100%;
+    margin: 0 10px;
+    border: 1px solid var(--Lightgray);
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 10px;
+    color: var(--GrayishBlue);
+}
+
+.add-comment textarea:focus, .comment-content textarea:focus{
+    outline: none !important;
+    border: 1px solid var(--Darkblue);
+}
+
+.add-comment .send-btn-container{
+    margin-left: auto;
+}
+
+.add-comment button, .comment-content button{
+    border-radius: 5px;
+    background: var(--Moderateblue);
+    color: var(--White);
+    padding: 7px 15px;
+}
+
+.display-none{
+    display: none !important;
+}
+
+.overflow-hidden{
+    overflow: hidden;
+}
+.delete-confirmation-wrapper{
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    background-color: hsla(211, 10%, 45%, .3);
+    margin: auto 0;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.delete-container{
+    width: 350px;
+    background: var(--White);
+    padding: 25px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    font-weight: 400;
+}
+.delete-container .title{
+    color: var(--Darkblue);
+}
+
+.delete-container .confrimation-message{
+    color: var(--GrayishBlue);
+}
+
+.delete-container .confrimation-message{
+    margin: 20px 0;
+}
+
+.delete-container .btn-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.delete-container button{
+    border: none;
+    border-radius: 5px;
+    background: var(--GrayishBlue);
+    color: var(--White);
+    padding:  15px;
+    text-transform: uppercase;
+    margin: 5px;
+}
+
+.delete-container button.delete-btn{
+    background: var(--SoftRed);
+}
+
+.comment-mobile-footer, .send-btn-container .user-img{
+    display: none;
+}
+
+button:not(.plus-icon, .minus-icon):hover{
+    opacity: .7;
+}
+
+
+/* mobile styles */
+@media screen and (max-width: 375px){
+    .user-img{
+        width: 30px;
+    }
+    .comment-container{
+        width: 90%;
+    }
+
+    .add-comment{
+        width: 90%;
+    }
+
+    .comment .comment-mobile-footer{
+        margin-top: 10px;
+    }
+
+    .comment .comment-score, .comment .comment-header .comment-btn{
+        display: none;
+    }
+
+    .comment .comment-mobile-footer .comment-score{
+        display: flex;
+        background: var(--Lightgray);
+        color: var(--GrayishBlue);
+        padding: 5px 10px;
+        border-radius: 7px;
+    }
+
+    .comment .comment-mobile-footer .comment-score .score-counter{
+        margin: 0 15px;
+    }
+
+    .comment{
+        flex-flow: column wrap;
+        padding: 10px;
+    }
+
+    .comment-content{
+        margin: 10px 5px;
+    }
+
+    .comment .comment-mobile-footer{
+        display: flex;
+    }
+    .add-comment{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .add-comment .user-image-container{
+        display: none;
+    }
+    .add-comment .send-btn-container .user-img{
+        display: inline-block;
+        margin-left: 5%;
+    }
+    .add-comment .send-btn-container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0;
+    }
+    .delete-container{
+        padding: 15px;
+    }
+}
